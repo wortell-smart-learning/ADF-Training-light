@@ -41,7 +41,7 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 5. Het bestand wordt geupload en zou binnen enkele seconden in de container verschijnen.
 
 
-## Opdracht 4 - Database inrichten
+## Opdracht 3 - Database inrichten
 
 11. Ga terug naar je resourcegroup. In de lijst zie je 2 databases (sqldb-source en sqldb-target) en 1 server. De sqldb-source is al ingericht en voorzien van data (AdventureWorksLT).
 11. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
