@@ -80,6 +80,11 @@ De tweede bron die we toevoegen is een Storage Account. Deze kunnen we bijvoorbe
 > ### Achtergrond informatie: Minder instellingen voor Storage Account. ###
 > De rechten op het Storage Account zijn uitgedeeld via Azure Entra ID. Hier heb je dus geen *secret* voor hoeven gebruiken.
 
+## Opdracht 4 - Publish
+
+1. Vergeet je laatste wijzigingen niet te publiseren.  
+   Klik op de **Blauwe knop** met de tekst **Publish all** en vervolgens op de knop **Publish**. Door te publishen komen de aanpassingen live te staan, en kan de Key Vault gebruikt worden.
+
 ## Inhoudsopgave
 
 0. [De Azure omgeving prepareren](../0Prep/LabVoorbereiding0.md)
