@@ -35,25 +35,31 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 
 ## Opdracht 2 - Data klaar zetten
 
-6. Ga terug naar de Azure portal (portal.azure.com) en zoek binnen je resourcegroup naar het **Storage Account** en klik deze aan.
-6. In de Blade (Navigatiebalk aan de linkerkant) vind je onder het kopje **Data storage** de optie **Containers**, klik deze aan.
-6. Je zult zien dat er al een container is genaamd **data**, klik deze aan. De container is nog leeg en deze gaan wij vullen met de bestanden **ProductCategoryDiscount.csv** en **SalesPersonal.csv**.
-6. In de horizontale navigatiebalk zie je een aantal opties zoals:
+6. In Github binnen deze training zijn twee csv-bestanden beschikbaar. Deze ga je eerst downloaden:
+   * Je kan deze bestanden vinden in de folder: [0Prep/LabEnvironment](../0Prep/LabEnvironment)
+   * Open de CSV bestanden één voor één en click op de download knop.
+  
+> De bestanden worden in de default folder opgeslagen.
+ 
+7. Ga terug naar de Azure portal (portal.azure.com) en zoek binnen je resourcegroup naar het **Storage Account** en klik deze aan.
+7. In de Blade (Navigatiebalk aan de linkerkant) vind je onder het kopje **Data storage** de optie **Containers**, klik deze aan.
+7. Je zult zien dat er al een container is genaamd **data**, klik deze aan. De container is nog leeg en deze gaan wij vullen met de bestanden **ProductCategoryDiscount.csv** en **SalesPersonal.csv** die we aan het begin van **Opdracht 2** hebben gedownload.
+7. In de horizontale navigatiebalk zie je een aantal opties zoals:
     * Upload
     * Change access level
     * refresh
-6. Klik op **Upload**, klik op **browse for files** en selecteer het bestaand genaamd **ProductCategoryDiscount.csv** of sleep het bestand vanuit explorer naar het drag 'n drop gebied in de portal en klik vervolgens op de **Upload** knop.
-6. Het bestand wordt geupload en zou binnen enkele seconden in de container verschijnen.
+7. Klik op **Upload**, klik op **browse for files** en selecteer het bestaand genaamd **ProductCategoryDiscount.csv** of sleep het bestand vanuit explorer naar het drag 'n drop gebied in de portal en klik vervolgens op de **Upload** knop.
+7. Het bestand wordt geupload en zou binnen enkele seconden in de container verschijnen.
 
 
 ## Opdracht 3 - Database inrichten
 
-12. Ga terug naar je resourcegroup. In de lijst zie je 2 databases (sqldb-source en sqldb-target) en 1 server. De sqldb-source is al ingericht en voorzien van data (AdventureWorksLT).
-12. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
+13. Ga terug naar je resourcegroup. In de lijst zie je 2 databases (sqldb-source en sqldb-target) en 1 server. De sqldb-source is al ingericht en voorzien van data (AdventureWorksLT).
+13. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
     * De loginnaam van het sqladmin-account zou al ingevuld staan, voer vervolgens het wachtwoord **WortellSmartLearning.nl** in.
-12. Wanneer je ingelogd bent, zie je een query-interface voor je en de tabbellen, views en stored procedure mappen aan de linkerkant.
-12. Ga terug naar de Github map van 0Prep en in de map **LabEnvironment**. Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**.
-12. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
+13. Wanneer je ingelogd bent, zie je een query-interface voor je en de tabbellen, views en stored procedure mappen aan de linkerkant.
+13. Ga terug naar de Github map van 0Prep en in de map **LabEnvironment**. Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**.
+13. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
 
 ## Inhoudsopgave
 
