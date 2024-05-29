@@ -49,7 +49,10 @@ Voordat we echter *secrets* uit de Key Vault kunnen benaderen, zullen we de Key 
 Met de Key Vault aangesloten is het mogelijk om wachtwoorden op te halen om een beveiligde verbinding op te zetten met bijvoorbeeld de databases.
 
 1. Klik op **New**, en zoek naar **SQL**. Dubbelklik de **Azure SQL Databases** aan.
-2. Geef de Linked services een duidelijke naam, bijvoorbeeld `LS_sqldb_source`
+2. Geef de Linked services een duidelijke naam:
+> Bijvoorbeeld: 
+> * `LS_sqldb_source`
+> * `LS_sqldb_target`
 3. Kies bij **Connect via integration runtime** de eigen gemaakte **Azure IR**.
 4. Kies bij de **Azure Subscription** het abonnement waaronder je werkt.
 5. Kies bij de **Server Name** de Server naam in zoals deze in je resourcegroup staat.
@@ -70,7 +73,9 @@ Je hebt nu twee Linked Services aangemaakt. Dit maakt het voor ADF mogelijk om v
 De tweede bron die we toevoegen is een Storage Account. Deze kunnen we bijvoorbeeld gebruiken als *landing zone* voor de data, of als Data Lake.
 
 1. klik op **New**, en zoek naar **storage**. Klik de **Azure Blob Storage** aan.
-2. Geef de Linked services een duidelijke naam.
+2. Geef de Linked services een duidelijke naam:
+> Bijvoorbeeld: 
+> * `LS_blob_training`
 3. Kies bij **Connect via integration runtime** de eigen gemaakte **Azure IR**.
 4. Kies bij **Storage account name** het storage account zoals deze in je resourcegroup staat.
 5. Klik op de knop **Test Connection** om te valideren dat de verbinding tot stand gebracht kan worden. Gaat dit fout, laat het weten aan de trainer.
