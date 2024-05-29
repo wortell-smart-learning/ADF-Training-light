@@ -36,7 +36,6 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 ## Opdracht 2 - Data klaar zetten
 
 6. Ga terug naar de Azure portal (portal.azure.com) en zoek binnen je resourcegroup naar het **Storage Account** en klik deze aan.
-   ![Zoek Resource Group](/0Prep/img/0prep_1.png)
 6. In de Blade (Navigatiebalk aan de linkerkant) vind je onder het kopje **Data storage** de optie **Containers**, klik deze aan.
 6. Je zult zien dat er al een container is genaamd **data**, klik deze aan. De container is nog leeg en deze gaan wij vullen met de bestanden **ProductCategoryDiscount.csv** en **SalesPersonal.csv**.
 6. In de horizontale navigatiebalk zie je een aantal opties zoals:
