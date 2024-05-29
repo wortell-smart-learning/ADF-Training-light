@@ -16,7 +16,7 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fwortell-smart-learning%2FADF-Training-light%2Fmain%2F0Prep%2FLabEnvironment%2Fazuredeploy.json)
 
-2. In het deployscherm zijn alle vereisten velden al voorzien van waardes. De Region staat bijvoorbeeld op "East US", deze locatie is misschien ver weg, maar het is een groot locatie waar veel beschikbaar is. In de praktijk ligt het voor de hand dat je voor latency en kosten liever een locatie in de buurt kiest.
+2. In het deployscherm zijn alle vereisten velden al voorzien van waardes. De Region staat bijvoorbeeld op "East US", deze locatie is misschien ver weg, maar het is een grote locatie waar veel beschikbaar is. In de praktijk ligt het voor de hand dat je voor latency en kosten liever een locatie in de buurt kiest.
 Voor deze training dien je alleen zelf een resourcegroup aan te maken door op de **create new** te klikken. Vul hier een naam in en klik vervolgens op OK. 
 
 > Een *best practice* is om de naam van een resourcegroup te laten beginnen met `rg-` gevolgd door een omschrijvende naam en eindigend met een `-omgeving`. 
