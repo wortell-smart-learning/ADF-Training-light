@@ -58,7 +58,7 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 13. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
     * De loginnaam van het sqladmin-account zou al ingevuld staan, voer vervolgens het wachtwoord **WortellSmartLearning.nl** in.
 13. Wanneer je ingelogd bent, zie je een query-interface voor je en de tabbellen, views en stored procedure mappen aan de linkerkant.
-13. Ga terug naar de Github map van 0Prep en in de map **LabEnvironment**. Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**.
+13. Ga terug naar de Github map waarvandaan je in **Opdracht 2** de CSV bestanden hebt gedownload. [0Prep/LabEnvironment](../0Prep/LabEnvironment). Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**.
 13. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
 
 ## Inhoudsopgave
