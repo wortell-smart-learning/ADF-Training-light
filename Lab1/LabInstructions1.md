@@ -28,10 +28,13 @@ In deze eerste opdracht gaan we daarom een Azure Integration Runtime aanmaken wa
 1. Ga naar de [Azure portal](portal.azure.com). Klik de Data Factory aan. Een nieuwe pagina zal laden met een knop **Launch Studio** klik deze aan. Je wordt nu naar de pagina van de ADF geleid.
 2. Klik links op de **gereedschapskist** (Manage). Klik vervolgens aan de linkerkant op **Integration runtimes**. Je zult zien dat er al een **AutoResolveIntegrationRuntime** bestaat. Dit is de standaard IR binnen Azure waarmee je tussen de verschillende diensten als SQL Database, Azure Data Lake Store e.d. data mee kan verplaatsen.
 3. Klik op **New**, klik op **Azure, Self-Hosted** en op **continue** en vervolgens op **Azure** en weer **continue**. Je kunt nu een nieuwe **Azure Integration Runtime** aanmaken, waarbij je ook specifiek de **Region** kunnen aangeven. Hiermee weet je zeker dat de data altijd binnen deze regio blijft.
-4. Geef de IR een naam en kies de **Region** waarbinnen de rest van je resources zich bevinden. Qua naamgeving is het handig om te beginnen met `IR-` gevolgd door wat voor een soort IR het is, de -regio en de -omgeving.
-   * Praktijkvoorbeeld: `IR-AzureResolve-EastUS-TST`
-   * Trainingsvoorbeeld: `IR-AzureResolve-EastUS-Training`
-5. Klik op **Create**
+4. Geef de IR een naam en kies de **Region** waarbinnen de rest van je resources zich bevinden.
+
+> Qua naamgeving is het handig om te beginnen met `IR-` gevolgd door wat voor een soort IR het is, de -regio en de -omgeving.
+> * Praktijkvoorbeeld: `IR-AzureResolve-EastUS-TST`
+> * Trainingsvoorbeeld: `IR-AzureResolve-EastUS-Training`
+
+6. Klik op **Create**
 
 Je IR wordt nu aangemaakt en zou binnen enkele seconden klaar moeten zijn.
 
