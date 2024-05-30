@@ -2,7 +2,7 @@
 
 *Vereisten*
 
-Om het lab te kunnen starten is het van belang dat Lab3 is afgerond.
+Om het lab te kunnen starten is het van belang dat [Lab3 - Datasets](../Lab3/LabInstructions3.md) is afgerond.
 
 *Doel*
 
@@ -20,9 +20,16 @@ Om het lab te kunnen starten is het van belang dat Lab3 is afgerond.
 
 4. Geef de Activiteit een duidelijke naam.
 
+> Bijvoorbeeld:
+> * Copy Address
+
 5. Klik op de tab **Source**. Er wordt gevraagd om een **Source dataset** op te geven. Klik deze aan en kies de Dataset voor **Address** vanuit de **sqldb-source**.
 
+> In een vorige opdracht werd de naam *DS_asql_SalesLT_Address_training* gesuggereerd.
+
 6. Klik op de tab **Sink**. Er wordt gevraagd om een **Sink dataset** op te geven. Klik deze aan en kies de Dataset voor **Address** vanuit de **sqldb-target**.
+
+> In een vorige opdracht werd de naam *DS_targetsql_stg_Address_training* gesuggereerd.
 
 7. Verschillende opties zullen verschijnen, waaronder ook de optie voor een **Pre-copy script**. Hier kan je SQL-code uitvoeren voordat de Copy activiteit data gaat verplaatsen. Gezien we de pipeline meerdere keren willen kunnen draaien zonder dubbele data te krijgen kan je hier het volgende invullen/ plakken:
 
@@ -102,6 +109,9 @@ Sluit de **Details** af door op het **Kruisje** te klikken.
 
 10. Klik bij **Targer criteria** op het **Add criteria**. Een lange lijst met opties zal verschijnen voor verschillende soorten metrics waarover gerapporteerd kunnen worden. Kies voor de **Succeeded pipeline runs metrics** en klik op **Continue**.  
 
+> Het ligt voor de hand om juist een notificatie te versturen wanneer een pipeline heeft gefaald.
+> Ter demonstratie van de functionaliteit kiezen we nu voor een succesvolle pipeline.
+
 11. Klik bij **Values** de optie bij **Name** aan en kies de `PL_copy_Master` pipeline.
 
 12. De andere settings kunnen blijven zoals ze zijn. Klik vervolgens op **Add criteria**.
@@ -113,6 +123,9 @@ Sluit de **Details** af door op het **Kruisje** te klikken.
 15. Klik bij **Notifications** op **Add notification** en geeft de **Action name** een duidelijke naam. Kies vervolgens bij **Select which notifications you'd like to receive** de optie **Email** en vul hier een e-mailadres is waar je nu toegang tot hebt. Andere opties mogen ook zodat je deze kan uitproberen. Wanneer je alles hebt toegevoegd dat je wilt, klik je op **Add notification**.
 
 16. Klik vervolgens op **Add action group**. Gaat dit fout, laat het weten aan de trainer.
+
+> Een voorkomende fout is dat binnen de Azure Subscription de resource provider **microsoft.insights** niet is geregistreerd.
+> Zonder deze resource is het niet mogelijk om notificaties vanuit ADF per email te versturen.
 
 17. Klik op **Create alert rule**
 
@@ -128,6 +141,11 @@ Met behulp van parameters kun je je pipeline meer dynamisch maken. Bijvoorbeeld 
 2. In de balk onderin zie je de tab **Parameters**, klik deze aan als je hier niet al opzit.
 
 3. Klik op **New**, een nieuwe parameter wordt aangemaakt. Vul bij **Name** het volgende in: **ModifiedDate**. De **Type** kan op **String** blijven staan. 
+
+> ### Toelichting ###
+> Je hebt zojuist een variabele aangemaakt in de pipeline.  
+> Dat wil zeggen dat de pipeline om een input voor deze variabele gaat vragen als de pipeline wordt gestart.  
+> Binnen de pipeline doen we nog niets met deze variabele, dat is de volgende stap.
 
 4. Klik op het blokje voor de **Copy data**. Klik vervolgens op de tab **Source** en kies bij **Use query** de optie **Query**.
 
@@ -145,7 +163,7 @@ Met behulp van parameters kun je je pipeline meer dynamisch maken. Bijvoorbeeld 
 
 9. Klik op het canvas en vervolgens op de tab **Variables**. maak een nieuwe variable aan door op **New** te klikken.
 
-10. Noem de variabele `FilterDate`
+10. Noem de variabele `FilterDate`, laat ook hier het type op `String` staan.
 
 11. Uit de lijst met **Activities**, klik op de optie **General**. Klik en sleep **Set variable** op het canvas. 
 
@@ -159,7 +177,8 @@ Met behulp van parameters kun je je pipeline meer dynamisch maken. Bijvoorbeeld 
 
 16. Klik het invul veld bij **Value** aan en klik vervolgens op **Add dynamic content**.
 
-17. Ga in het nieuwe scherm naar de tabl **Variables**. Klik op de variabele **FilterDate** en vervolgens op **OK**.
+17. Ga in het nieuwe scherm naar de tabl **Variables**. Klik op de variabele **FilterDate** en vervolgens op **OK**.  
+    ![Visuele weergave van deze stap](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/01c6062a-f76a-4817-9ca4-e9612893fd2a)
 
 18. Klik op de **Blauwe knop** met de tekst **Publish all** en vervolgens op de knop **Publish**.
 
