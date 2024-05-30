@@ -2,17 +2,18 @@
 
 *Vereisten*
 
-Om het lab te kunnen starten is het van belang dat Lab4 is afgerond.
+Om het lab te kunnen starten is het van belang dat [Lab 4 - Pipelines](../Lab4/LabInstructions4.md) is afgerond.  
+Het is niet noodzakelijk dat [Lab 5 - Triggers](../Lab5/LabInstructions5.md) is gedaan.
 
 *Doel*
 
-We hebben al enkele activities gebruikt zoals Copy, Web, Wait en Set variable. Er zijn er nog veel meer en sommige zijn heel handig als je deze met elkaar laten samenwerken om zodoende geavanceerde pipelines te creeeren. Volg de opdrachten stap voor stap.
+We hebben al enkele activities gebruikt zoals Copy, Execute Pipeline en Set variable. Er zijn er nog veel meer en sommige zijn heel handig als je deze met elkaar laten samenwerken om zodoende geavanceerde pipelines te creeeren. Volg de opdrachten stap voor stap.
 
 ## Opdracht 1 - Stored Procedure uitvoeren
 
 Stored Procedures zijn opgeslagen programma's op de database. Vaak worden acties op de database (zoals het leegmaken van een tabel, of het starten van een proces binnen de database) in een stored procedure "gevangen". Met ADF kun je deze nu orchestreren.
 
-1. Zorg dat je weer terug bent in ADF. Klik bij Pipelines op **Pipeline Actions** en op **New Pipeline**.
+1. Klik bij Pipelines op **Pipeline Actions** en op **New Pipeline**.
 
 2. Noem de pipeline: `PL_Process_Dates_Training`.
 
@@ -61,7 +62,7 @@ Allereerst halen we hier data op uit een SQL-database, en doen een filtering op 
 
 10. Zet het vinkje uit bij **First row only**.
 
-11. Klik bij **Use query** op de optie **query** en type of plak de volgende code: 
+11. Klik bij **Use query** op de optie **query** en type of plak de onderstaande code en klik op **OK**. 
 
     SELECT
     COUNT(*) AS Registered_Customers,
@@ -80,15 +81,24 @@ Allereerst halen we hier data op uit een SQL-database, en doen een filtering op 
 15. klik op de tab **Settings** en klik bij **Items** op het veld er naast en vervolgens op **Add dynamic content**.
 
 16. Klik onder **Activity outputs** op **Lookup_SalesPersonal value array** en klik op **OK**.
+    ![Verduidelijking van de gewenste Dynamische code](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/fa1e84e2-3f72-4798-88b7-cd944474409c)
 
 17. Klik bij **Condition** op het veld er naast en vervolgens op **Add dynamic content**.
 
-18. Ga naar **Functions**, en type of plak de volgende code: `@greaterOrEquals(item().Registered_Customers,100)`
+18. Ga naar **Functions**, en type of plak de volgende code: `@greaterOrEquals(item().Registered_Customers,100)` en klik op **OK**.
+    ![Verduidelijking van welk deel van de code uit de tabbladen gehaald kan worden](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/243091bc-82d6-4f72-ac3f-ba60405423fa)
 
 19. Klik op de **Blauwe knop** met de tekst **Publish all** en vervolgens op de knop **Publish**.
 
 20. Klik op **Debug** en wacht tot de pipeline klaar is, bekijk de resultaten door op de **Output** van de **Best seller** stap te kijken.
+    ![Zoek de pipeline op in de monitor](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/e84869ba-5ab8-40a6-ab96-320205f4e4c5)
+    ![Raadpleeg de output van pipeline Best seller](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/8833004e-99a0-4629-9c95-c8d8e116cb6d)
+    ![Verwacht eindresultaat](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/dfbae160-a309-4fab-bb49-b77e5772518e)
 
+> ### Toelichting ###
+> In de query die bij de *Lookup* is gebruikt had natuurlijk meteen een *HAVING* statement meegegeven kunnen worden, om hetzelfde resultaat te bereiken.
+> Doordat we deze voorwaarde nu uit de query halen en in een **Filter** activiteit stoppen, creëer je de mogelijkheid om deze filter voorwaarde te parameteriseren in ADF.
+> Het parameterisering van deze conditie hebben we in deze opdracht niet uitgevoerd in verband met de duur van de training. De benodigde kennis om dit zelf uit te voeren heb je wanneer je deze opdracht combineert met de ervaring uit Lab 4, opdracht 3.
 
 ## Opdracht 3 - Dynamische pipelines/ Datasets
 
