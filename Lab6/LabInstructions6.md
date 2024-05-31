@@ -7,7 +7,7 @@ Het is niet noodzakelijk dat [Lab 5 - Triggers](../Lab5/LabInstructions5.md) is 
 
 *Doel*
 
-We hebben al enkele activities gebruikt zoals Copy, Execute Pipeline en Set variable. Er zijn er nog veel meer en sommige zijn heel handig als je deze met elkaar laten samenwerken om zodoende geavanceerde pipelines te creeeren. Volg de opdrachten stap voor stap.
+We hebben al enkele activities gebruikt zoals Copy, Execute Pipeline en Set variable. Er zijn er nog veel meer en sommige zijn heel handig als je deze met elkaar laten samenwerken om zodoende geavanceerde pipelines te creëeren. Volg de volgende opdrachten stap voor stap.
 
 ## Opdracht 1 - Stored Procedure uitvoeren
 
@@ -118,15 +118,20 @@ Zo kun je bijvoorbeeld een lijst op te halen tabellen uitlezen uit een CSV-besta
 
 4. Laat de **Table name** leeg en klik op **OK**.
 
+> Kijk optioneel bij het tabblad **Schema** en constateer dat er nu geen mapping aanwezig is.
+> Ook de optie **Import schema** levert nu een foutmelding op. Dit is logisch omdat we in de vorige stap geen tabel hebben geselecteerd.
+> Zoals aangekondigd zullen deze stappen dynamisch worden vormgegeven.
+ 
 5. Herhaal stap 1 t/m 4 voor de **sqldb-target** en noem de Dataset als volgt: `DS_asql_sqldb_TargetTables_training`.
 
 6. Wanneer de Dataset voor de **sqldb-target** is aangemaakt, ga naar de tab **Parameters** en klik op **New**.
 
-7. Geef de parameter de naam `TargetTableName`.
+7. Geef de parameter de **name** `TargetTableName`, laat het **Type** op `String` en laat de **Default value** leeg.
 
-8. Ga naar de tab **Connection** en vink **Edit** aan. Vul in het eerste veld **Stg** in en klik op het 2e veld en vervolgens op **Add dynamic content**.
+8. Ga naar de tab **Connection** en vink **Enter manually** aan. Vul het eerste veld **schema name** met de tekst `Stg`. Klik vervolgens het tweede veld aan en kies vervolgens voor **Add dynamic content**.
 
 9. Kies uit de lijst de parameter genaamd: **TargetTableName** en klik vervolgens op **OK**.
+    ![Verduidelijking van stappen 8 en 9](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/94dcaef2-e189-4a3c-8edb-7fb0a79d603c)
 
 10. Klik bij Pipelines op **Pipeline Actions** en op **New Pipeline**.
 
@@ -139,6 +144,7 @@ Zo kun je bijvoorbeeld een lijst op te halen tabellen uitlezen uit een CSV-besta
 14. Klik bij **Use query** de optie **Query** aan. Klik vervolgens in het query veld en plak of type de volgende query:
 
     ```sql
+    /* Met de volgende query halen we uit het information schema alle tabellen uit het schema "SalesLT" */
     SELECT 
     TABLE_SCHEMA AS Table_Schema,
     TABLE_NAME AS Table_Name
@@ -146,41 +152,53 @@ Zo kun je bijvoorbeeld een lijst op te halen tabellen uitlezen uit een CSV-besta
     WHERE TABLE_SCHEMA = 'SalesLT' AND TABLE_TYPE = 'BASE TABLE'
     ```
 
-    Indien **First row only** staat aangevinkt, zet deze uit.
+15. Indien **First row only** staat aangevinkt, zet deze uit.
 
-15. Uit de lijst met **Activities**, klik op de optie **Iteration & Conditionals**. Klik en sleep **ForEach** op het canvas.
+16. Uit de lijst met **Activities**, klik op de optie **Iteration & Conditionals**. Klik en sleep **ForEach** op het canvas.
 
-16. Sleep het **Groene blokje** van **Lookup_SourceTables** naar de **ForEach** zodat deze opeenvolgend aan elkaar zijn verbonden.
+17. Sleep het **Groene blokje** van **Lookup_SourceTables** naar de **ForEach** zodat deze opeenvolgend aan elkaar zijn verbonden.
 
-17. Geef de **ForEach** de naam `ForEachTable` en klik op de tab **Settings**.
+18. Geef de **ForEach** de naam `ForEachTable` en klik op de tab **Settings**.
 
-18. Klik op het vlak naast **Items** en vervolgens op **Add dynamic content**. Kies voor `Lookup_SourceTables value array`.
+19. Klik op het vlak naast **Items** en vervolgens op **Add dynamic content**. Kies voor `Lookup_SourceTables value array`.
 
-19. klik op de **plus** in de **ForEachTable**. Kies nu de activity **Copy Data**.
+20. klik op de **plus** in de **ForEachTable**. Kies nu de activity **Copy Data**.
+    ![Verduidelijking stappen 16 t/m 20](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/b0a9fb35-92ff-47ab-9c67-e456965a288c)
 
-20. Geef de **Copy data** de naam `Copy Tables` en klik vervolgens op de tab **Source** en kies voor de **Source dataset** de `DS_aqsl_sqldb_SourceTables_training`.
+21. Geef de **Copy data** de naam `Copy Tables` en klik vervolgens op de tab **Source** en kies voor de **Source dataset** de `DS_aqsl_sqldb_SourceTables_training`.
 
-21. Klik bij **Use query** de optie **Query** aan. Klik vervolgens in het query veld en vervolgens op **Add dynamic content** en type of plak:
+22. Klik bij **Use query** de optie **Query** aan. Klik vervolgens in het query veld en vervolgens op **Add dynamic content** en type of plak de onderstaande query en druk vervolgens op **OK**:
 
     ```sql
-    SELECT * FROM @{item().Table_Schema}.@{item().Table_Name}
+    /* Deze query haalt het schema en de tabel op uit de query die in de Lookup_SourceTables is gebruikt.  
+    Omdat deze query in een Copy activity zit binnen een ForEach activity, is het resultaat één regel.  
+    Op deze manier is de input voor welke tabel geëxtraheerd gaat worden, dynamisch vastgesteld. */
+    SELECT 
+    Table_Schema,
+    Table_Name
+    FROM @{item().Table_Schema}.@{item().Table_Name}
     ```
 
-22. Klik op de tab **Sink** en kies vervolgens de `DS_aqsl_sqldb_TargetTables_training` linked service, klik daarna op het veld naast **TargetTableName** gevolgd door **Add dynamic content** en plak of type: 
+    ![Verduidelijking stappen 20 t/m 22](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/16dcd687-df77-4246-8362-4f72f689af21)
+
+23. Klik op de tab **Sink** en kies vervolgens de `DS_aqsl_sqldb_TargetTables_training` linked service, klik daarna op het veld naast **TargetTableName** gevolgd door **Add dynamic content** en type of plak de onderstaande query en druk vervolgens op **OK**: 
 
     ```sql
     @item().Table_Name
     ```
 
-23. Klik op het veld naast **Pre-copy script** en vervolgens op **Add dynamic content** en plak of type: 
+24. Klik op het veld naast **Pre-copy script** en vervolgens op **Add dynamic content** en plak of type: 
 
     ```sql
     TRUNCATE TABLE Stg.@{item().Table_Name}
     ```
 
-24. Klik op de **Blauwe knop** met de tekst **Publish all** en vervolgens op de knop **Publish**.
+    ![Verduidelijking stappen 23 t/m 24](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/cd2ba9e4-8f62-4636-bffd-d1d763bfdc4d)
 
-25. Klik op **Debug** en wacht tot de pipeline klaar is.
+
+25. Klik op de **Blauwe knop** met de tekst **Publish all** en vervolgens op de knop **Publish**.
+
+26. Klik op **Debug** en wacht tot de pipeline klaar is.
 
 ## Einde Lab 6
 
