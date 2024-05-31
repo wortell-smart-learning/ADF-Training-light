@@ -47,7 +47,8 @@ We hebben nu zo goed als alles behandeld rondom de standaard orchestratie in de 
 
 4. Verander de **Data integration unit** van 2 in iets anders,  klik op **Debug** en bekijk je resultaten. Probeer enkele **Data integration units** tot het moment dat het geen verschil meer maakt.
 
-Wil je meer weten over de kosten die je aan ADF kwijt bent? Koen Verbeeck schreef dit handige artikel: [How you can save up to 80% on Azure Data Factory pricing](https://sqlkover.com/how-you-can-save-up-to-80-on-azure-data-factory-pricing/). Hij verwijst hierin naar een [Youtube](https://youtu.be/Fct1dcZMyWs) van Cathrine Wilhelmsen waarin binnen 10 minuten de basics goed worden uitgelegd.
+> ### Achtergrond informatie: Azure Data Factory kosten ###
+> Wil je meer weten over de kosten die je aan ADF kwijt bent? Koen Verbeeck schreef dit handige artikel: [How you can save up to 80% on Azure Data Factory pricing](https://sqlkover.com/how-you-can-save-up-to-80-on-azure-data-factory-pricing/). Hij verwijst hierin naar een [Youtube](https://youtu.be/Fct1dcZMyWs) van Cathrine Wilhelmsen waarin binnen 10 minuten de basics goed worden uitgelegd.
 
 ## Einde Lab 7
 
