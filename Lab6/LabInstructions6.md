@@ -173,13 +173,11 @@ Zo kun je bijvoorbeeld een lijst op te halen tabellen uitlezen uit een CSV-besta
     /* Deze query haalt het schema en de tabel op uit de query die in de Lookup_SourceTables is gebruikt.  
     Omdat deze query in een Copy activity zit binnen een ForEach activity, is het resultaat één regel.  
     Op deze manier is de input voor welke tabel geëxtraheerd gaat worden, dynamisch vastgesteld. */
-    SELECT 
-    Table_Schema,
-    Table_Name
+    SELECT *
     FROM @{item().Table_Schema}.@{item().Table_Name}
     ```
 
-    ![Verduidelijking stappen 20 t/m 22](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/16dcd687-df77-4246-8362-4f72f689af21)
+    ![Verduidelijking stappen 20 t/m 22](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/67b3eece-8f7a-4543-8c98-569f0ff8ba0c)
 
 23. Klik op de tab **Sink** en kies vervolgens de `DS_aqsl_sqldb_TargetTables_training` linked service, klik daarna op het veld naast **TargetTableName** gevolgd door **Add dynamic content** en type of plak de onderstaande query en druk vervolgens op **OK**: 
 
