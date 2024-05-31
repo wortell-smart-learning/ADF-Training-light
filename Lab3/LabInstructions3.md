@@ -22,7 +22,7 @@ De eerste *dataset* die we aankoppelen is een tabel die binnen onze brondatabase
 5. Bij **Linked Services** kies je de Linked Service die verwijst naar de brondatabase (`LS_sqldb_source`).
 6. De IR wordt automatisch toegepast vanuit de Linked Service. De optie om een **Table name** te selecteren zal nu ook verschenen zijn, klik hierop en kies voor **SalesLT.Address**. Voltooi het aanmaken door onderaan de pagina op **OK** te klikken.
 7. Wanneer de **Dataset** is aangemaakt kom je in het overzichtscherm van de dataset. Klik op het brilletje (**Preview Data**) om een voorbeeld van de data te zien.
-8. Klik op de tab **Schema**. Met de knop **Import schema** download je de kolommen uit de geselecteerde tabel en de bijhorende datatypes, mocht dit niet automatisch gedaan zijn bij het aanmaken van de dataset. Dit is geen noodzakelijke stap en afhankelijk van de casus kan dit gewenst of ongewenst zijn. Voor deze opdracht importeren we het schema wel.
+8. Klik op de tab **Schema**. Met de knop **Import schema** download je de kolommen uit de geselecteerde tabel en de bijhorende datatypes, in dit geval is dit automatisch gedaan bij het aanmaken van de dataset. Voor deze opdracht importeren we het schema, vanaf [Lab 6 - Activities](../Lab6/LabInstructions6.md) gaan we dit dynamisch doen.
 
 > ### Achtergrond informatie: Voor- of nadelen van het importeren van het schema ###
 > **Voordelen**
