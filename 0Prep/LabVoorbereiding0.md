@@ -61,6 +61,23 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 13. Ga terug naar de Github map waarvandaan je in **Opdracht 2** de CSV bestanden hebt gedownload. [0Prep/LabEnvironment](../0Prep/LabEnvironment). Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**. Deze query creëert een aantal tabellen en stored procedures.
 13. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
 
+## Opdracht 4 - Maatwerk: Applicatie aanmaken
+
+Met de volgende stappen wordt een Azure Data Lake Storage aangemaakt.
+Een Azure Data Lake Storage wordt in de praktijk als "Landing Zone" gebruikt voor de ingestion naar het centrale data platform.
+Voor de laatste lab-opdrachten gaan we deze situatie simuleren.
+
+18. Ga terug naar de Azure Portal: [Azure Portal](https://portal.azure.com/#home)
+19. Kies voor *Create a resource* onder **Azure Services**
+20. Zoek naar *Storage account*
+21. Kies voor plan *Storage account* en click op **Create**
+22. Vul de onderstaande gegevens in onder tabblad **Basics**, en laat de rest op de default waarde staan:
+    * Resource group: *rg-adf-training*
+    * Storage account name: *adlr4g*
+23. Vink onder tabblad **Advanced** het vinkje *Enable hierachical namespace* aan
+24. Ga naar tabblad **Review + Create**
+25. Click onderin op **Create**
+
 ## Inhoudsopgave
 
 1. [De Azure omgeving prepareren](../0Prep/LabVoorbereiding0.md)
