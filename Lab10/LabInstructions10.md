@@ -9,7 +9,27 @@ Het is belangrijk kennis te hebben genomen van [Lab 6 -Activities](../Lab6/LabIn
 
 We gaan een dynamische pipeline maken die data extraheert uit een SQL Database en in CSV format opslaat binnen een storage account.
 
-## Opdracht 1 - De parameter in een Dataset
+## Opdracht 1 - Linked Service aanmaken naar Azure Data Lake Storage (dlsr4g)
+
+* LS_dlsr4g_training
+
+## Opdracht 2 - Pipeline aanmaken
+
+* Voorbeeld "Export sqldb-source objects to Landing Zone
+
+
+## Opdracht 3 - Resultaat bekijken in ADL
+
+* Stel vast dat directories door ADF zijn aangemaakt
+* Stel vast welke bestandsnaam de bronnen hebben gekregen
+
+
+## Opdracht 4 - Input verder parameteriseren
+
+Brainstorm van mogelijke praktijkoplossingen?
+* Input parameters in een table in plaats van alle information schema objecten?
+* Niet volledige tabellen overzetten, maar incrementeel?
+* Kolommen uitsluiten indien niet van toepassing?
 
 
 
