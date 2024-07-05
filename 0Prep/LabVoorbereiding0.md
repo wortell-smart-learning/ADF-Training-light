@@ -80,11 +80,12 @@ Voor de laatste lab-opdrachten gaan we deze situatie simuleren.
 
 ## Inhoudsopgave
 
-1. [De Azure omgeving prepareren](../0Prep/LabVoorbereiding0.md)
-2. [Integration Runtimes](../Lab1/LabInstructions1.md)
-3. [Linked Services](../Lab2/LabInstructions2.md)
-4. [Datasets](../Lab3/LabInstructions3.md)
-5. [Pipelines](../Lab4/LabInstructions4.md)
-6. [Triggers](../Lab5/LabInstructions5.md)
-8. [Activities](../Lab6/LabInstructions6.md)
-9. [Batching en DIUs](../Lab7/LabInstructions7.md)
+0. [De Azure omgeving prepareren](../0Prep/LabVoorbereiding0.md)
+1. [Integration Runtimes](../Lab1/LabInstructions1.md)
+2. [Linked Services](../Lab2/LabInstructions2.md)
+3. [Datasets](../Lab3/LabInstructions3.md)
+4. [Pipelines](../Lab4/LabInstructions4.md)
+5. [Triggers](../Lab5/LabInstructions5.md)
+6. [Activities](../Lab6/LabInstructions6.md)
+7. [Batching en DIUs](../Lab7/LabInstructions7.md)
+8. [Copy to CSV in Storage Account](../Lab8/LabInstructions8.md)
