@@ -33,7 +33,7 @@ Voordat we echter *secrets* uit de Key Vault kunnen benaderen, zullen we de Key 
 > In de naamgeving is een minteken (`-`) niet toegestaan. Een *underscore* (`_`) is wel mogelijk.
 
 6. Kies de **Azure Subscription** die je in de training gebruikt
-7. Kies bij **Azure Key vault Name** de key vault uit jouw Key Vault (deze start met `kv_`).
+7. Kies bij **Azure Key vault Name** de key vault uit jouw Key Vault (deze start met `kv-`).
 8. Klik op de knop **Test Connection** om te valideren dat de verbinding tot stand gebracht kan worden. Gaat dit fout, laat het weten aan de trainer.
 9. Als test klaar is en een **Groen bolletje** geeft, kan de Linked Service aangemaakt worden door op **Create** te klikken.
    ![Instellingen voor Azure Key Vault](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/02bcc429-cde9-4205-b471-83cab3837d67)
