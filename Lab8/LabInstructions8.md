@@ -9,27 +9,6 @@ Het is belangrijk kennis te hebben genomen van [Lab 6 -Activities](../Lab6/LabIn
 
 We gaan een dynamische pipeline maken die data extraheert uit een SQL Database en in CSV format opslaat binnen een storage account.
 
-## Opdracht 0 - Azure Data lake Storage aanmaken
-Nu we toekomen aan de specifieke casus, hebben we daarvoor ook een specifieke resource nodig: "Azure Data lake storage"  
-Met behulp van de volgende stappen, gaan jullie deze zelf aanmaken.
-
-1. Ga naar Portal.azure.com
-2. Kies voor Create a resource
-3. Zoek naar Storage account
-4. Kies voor Storage account
-5. Kies voor Plan **Storage account** en klik op Create  
-
-6. Kies de default subscription
-7. Kies de default Resource group
-8. Storage account name "dlsr4g"
-9. Region "(Europe) North Europe"
-10. Kies de default Performance
-11. Kies de default Redundancy
-
-12. Vink **Enable hierarchical namespace** aan op tabblad ***Advanced***
-13. Klik onderaan op Review + Create
-14. Klik op **Create**
-
 ## Opdracht 1 - Linked Service aanmaken naar Azure Data Lake Storage (dlsr4g)
 Nu we een nieuwe resource hebben, moeten we hiervoor ook een Linked Service aanmaken.
 Een paar aandachtspunten om niet te vergeten:
