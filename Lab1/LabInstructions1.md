@@ -31,8 +31,8 @@ In deze eerste opdracht gaan we daarom een Azure Integration Runtime aanmaken wa
 4. Geef de IR een naam en kies de **Region** waarbinnen de rest van je resources zich bevinden.
 
 > Qua naamgeving is het handig om te beginnen met `IR-` gevolgd door wat voor een soort IR het is, de -regio en de -omgeving.
-> * Praktijkvoorbeeld: `IR-AzureResolve-EastUS-TST`
-> * Trainingsvoorbeeld: `IR-AzureResolve-EastUS-Training`
+> * Praktijkvoorbeeld: `IR-AzureResolve-NorthEurope-TST`
+> * Trainingsvoorbeeld: `IR-AzureResolve-NorthEurope-Training`
 
 6. Klik op **Create**
 
