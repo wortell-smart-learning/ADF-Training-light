@@ -63,18 +63,6 @@ Inspiratie voor de oplossing kan je ook hiervoor vinden in Lab 6 Opdracht 3.
 * Stel vast welke bestandsnaam de bronnen hebben gekregen
 
 
-## Opdracht 5 - Input verder parameteriseren
-
-Brainstorm van mogelijke praktijkoplossingen?
-* Input parameters in een table in plaats van alle information schema objecten?
-* Niet volledige tabellen overzetten, maar incrementeel?
-* Kolommen uitsluiten indien niet van toepassing?
-
-
-
-
-
-
 
 ## Einde Lab 8
 
