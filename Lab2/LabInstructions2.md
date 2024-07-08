@@ -77,7 +77,7 @@ De tweede bron die we toevoegen is een Storage Account. Deze kunnen we bijvoorbe
 > Bijvoorbeeld: 
 > * `LS_blob_training`
 3. Kies bij **Connect via integration runtime** de eigen gemaakte **Azure IR**.
-4. Kies bij **Storage account name** het storage account zoals deze in je resourcegroup staat.
+4. Kies bij **Storage account name** het storage account dat begint met ***st*** zoals deze in je resourcegroup staat.
 5. Klik op de knop **Test Connection** om te valideren dat de verbinding tot stand gebracht kan worden. Gaat dit fout, laat het weten aan de trainer.
 6. Als test klaar is en een **Groen bolletje** geeft, kan de Linked Service aangemaakt worden door op **Create** te klikken.
    ![Instellingen voor Blob storage](https://github.com/jstofferswortellsmart/ADF-Training-light-202406/assets/170087926/940d77ca-a08b-4c64-8390-ed12652b19de)
