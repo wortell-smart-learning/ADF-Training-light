@@ -34,7 +34,7 @@ De eerste *dataset* die we aankoppelen is een tabel die binnen onze brondatabase
 > * Wanneer één dataset gebruikt wordt om meerdere tabellen uit een bronapplicatie te halen, is het niet mogelijk om het schema te importeren bij het aanmaken van de dataset.
 > * Wanneer het schema in de bronapplicatie regelmatig wijzigt, wil je niet parallel je dataset moeten aanpassen.
    
-10. Doe Opdracht 1 nogmaals, maar nu voor de **sqldb-target** Database voor de tabbellen **Address**, **ProductCategoryDiscount** en **SalesPersonal**.
+10. Doe Opdracht 1 nogmaals, maar nu voor de **sqldb-target** Database voor de tabbellen **Address**, **ProductCategoryDiscount** en **SalesPersonal**. Wanneer je geen tabel kan selecteren, dan is opdracht 3 van Lab0 nog niet uitgevoerd.
 
 > Suggesties voor tenaamstellingen:
 > * DS_targetsql_stg_Address_training
