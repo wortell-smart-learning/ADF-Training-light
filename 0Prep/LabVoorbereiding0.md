@@ -41,7 +41,7 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
   
 > De bestanden worden in de default folder opgeslagen.
  
-7. Ga terug naar de Azure portal (portal.azure.com) en zoek binnen je resourcegroup naar het **Storage Account** en klik deze aan.
+7. Ga terug naar de Azure portal (portal.azure.com) en zoek binnen je resourcegroup naar het **Storage Account** dat begint met ***st*** en klik deze aan.
 7. In de Blade (Navigatiebalk aan de linkerkant) vind je onder het kopje **Data storage** de optie **Containers**, klik deze aan.
 7. Je zult zien dat er al een container is genaamd **data**, klik deze aan. De container is nog leeg en deze gaan wij vullen met de bestanden **ProductCategoryDiscount.csv** en **SalesPersonal.csv** die we aan het begin van **Opdracht 2** hebben gedownload.
 7. In de horizontale navigatiebalk zie je een aantal opties zoals:
