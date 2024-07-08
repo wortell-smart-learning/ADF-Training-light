@@ -45,13 +45,11 @@ Nu je de locatie van de resource hebt aangegeven. Zal je Azure Data Factory moet
 * Welke kenmerken aan de bestanden wordt meegegeven.
 
 **File Path**
-* De locatie moet dynamische worden, hiervoor kan je Lab6 Opdracht 3 raadplegen ter inspiratie.
-* Container: ct-ops-<Afdeling>
-* Directory: data/<database>/<schema>/<object>
-* File name: <object>__yyyyMMdd_HHmmss
+* De locatie moet dynamische worden, hiervoor kan je Lab6 Opdracht 3 raadplegen ter inspiratie.  
+* Container: ct-ops-< Afdeling >  
+* Directory: data/< database >/< schema >/< object >  
+* File name: < object >__yyyyMMdd_HHmmss
 
-
- 
 > ### Extra informatie - @concat() ###  
 > In de Container, Directory en File Name ga je één of meerdere parameters combineren met 'harde tekst'.
 > Hiervoor kan je de Functie @Concat() gebruiken, een voorbeeld:
@@ -65,13 +63,19 @@ Nu je de locatie van de resource hebt aangegeven. Zal je Azure Data Factory moet
 > Gebruik de volgende code om de datum en tijd in je bestandsnaam te krijgen:  
 > formatDateTime(utcnow(), 'yyyyMMdd_HHmmss')
 
-
 **Overige kenmerken**
 De overige kenmerken zijn gegeven in de Power Point Presentatie
 
 ## Opdracht 3 - Pipeline aanmaken
+Nu de dataset is aangemaakt, kunnen we de pipeline maken.  
+In hoofdlijnen moet de pipeline het volgende doen:  
+1. Opzoeken welke tabellen er bestaan in de source  
+2. Per tabel:
+   * Alle data van de tabel opzoeken als bron
+   * Een copy maken naar een CSV bestand op de Azure Data Lake Storage
+   * Kenmerken van de opgezochte tabellen doorgeven aan de dataset   
 
-* Voorbeeld "Export sqldb-source objects to Landing Zone
+Inspiratie voor de oplossing kan je ook hiervoor vinden in Lab 6 Opdracht 3.
 
 
 ## Opdracht 4 - Resultaat bekijken in ADL
