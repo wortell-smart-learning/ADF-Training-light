@@ -1,44 +1,70 @@
-# Lab 8 - Eerste Data Flows
+# Lab 8 - Copy to CSV in Storage Account
 
 *Vereisten*
 
-Om het lab te kunnen starten is het van belang dat Lab6 is afgerond.
+Om het lab te kunnen starten is het van belang dat [Lab 3 - Datasets](../Lab3/LabInstructions3.md) is afgerond.  
+Het is belangrijk kennis te hebben genomen van [Lab 6 -Activities](../Lab6/LabInstructions6.md).
 
 *Doel*
 
-We willen ook de data integratie vormgeven met behulp van Data Flows. Inmiddels hebben we redelijk wat van Azure Data Factory / Synapse Pipelines gezien - de opdrachten zijn daarom nu meer hoogover!
+We gaan een dynamische pipeline maken die data extraheert uit een SQL Database en in CSV format opslaat binnen een storage account.
 
-Bij deze opdracht wordt verwacht dat je de AdventureWorkLT-database hebt geëxporteerd naar parquet-bestanden. Dat kun je uiteraard zelf doen (met de ervaring van lab 6), of je kunt de bestanden handmatig uploaden - ze staan hier:
+## Opdracht 1 - Linked Service aanmaken naar Azure Data Lake Storage (dlsr4g)
+Nu we een nieuwe resource hebben, moeten we hiervoor ook een Linked Service aanmaken.
+Een paar aandachtspunten om niet te vergeten:
 
-* [Address.parquet](parquetfiles/Address.parquet)
-* [Customer.parquet](parquetfiles/Customer.parquet)
-* [CustomerAddress.parquet](parquetfiles/CustomerAddress.parquet)
-* [Product.parquet](parquetfiles/Product.parquet)
-* [ProductCategory.parquet](parquetfiles/ProductCategory.parquet)
-* [ProductDescription.parquet](parquetfiles/ProductDescription.parquet)
-* [ProductModel.parquet](parquetfiles/ProductModel.parquet)
-* [ProductModelProductDescription.parquet](parquetfiles/ProductModelProductDescription.parquet)
-* [SalesOrderDetail.parquet](parquetfiles/SalesOrderDetail.parquet)
-* [SalesOrderHeader.parquet](parquetfiles/SalesOrderHeader.parquet)
+* Suggestie voor naam: **LS_dlsr4g_training**
+* Vergeet je Integration Runtime niet aan te passen
+* De resource is te vinden in de Azure Subscription
+* Test je connection voor de volledigheid
 
-# Opdracht: Eenvoudige dataflow
+## Opdracht 2 - Dataset aanmaken
+Nu je de locatie van de resource hebt aangegeven. Zal je Azure Data Factory moeten uitleggen:
+* Op welke locatie de bestanden worden weggeschreven, en;
+* Welke kenmerken aan de bestanden wordt meegegeven.
 
-In dit lab gaan we de Data Flow functionaliteit van Azure Data Factory zelf ervaren. Het doel is met name om alle componenten om de Data Flow heen een keer goed op het netvlies te hebben.
+**File Path**
+* De locatie moet dynamische worden, hiervoor kan je Lab6 Opdracht 3 raadplegen ter inspiratie.  
+* Container: ct-ops-< Afdeling >  
+* Directory: data/< database >/< schema >/< object >  
+* File name: < object >__yyyyMMdd_HHmmss
 
-Zorg er daarom voor dat de volgende zaken ingericht worden:
+> ### Extra informatie - @concat() ###  
+> In de Container, Directory en File Name ga je één of meerdere parameters combineren met 'harde tekst'.
+> Hiervoor kan je de Functie @Concat() gebruiken, een voorbeeld:
+>   
+> @concat(  
+>   'harde-tekst',  
+>   dataset().parameternaam  
+> )
 
-* Een nieuwe Data Flow, met daarin:
-  * Als source: het bestand `Product.parquet` op je Data Lake (container `stg`, map `awlt`)
-  * Er moet een extra kolom met ranking bijkomen, waarin aangegeven wordt welke productcategorie in totaal de meeste producten heeft.
-    * Als productcategorie volstaat voor nu `ProductCategoryID` (er hoeft geen koppeling gemaakt naar tabel ProductCategory)
-    * Maak het jezelf niet te moeilijk, denk in kleine stapjes (hint: wat moet je weten voordat je de ranking kunt doen?)
-    * Gebruik de Data preview om te kijken of je in de goede richting werkt.
-  * Alleen de producten in de grootste drie productcategorieën moeten weggeschreven worden
-    * Schrijf het resultaat weg op twee plaatsen:
-      * In je Data Lake (container `datalake`, map `bronze/analysis`, bestand `productcategories.parquet`)
-      * In je SQL Database (`target`). Laat een tabel aan met de naam `dbo.product_verrijkt` aanmaken door je **Sink** destination.
-* Maak een bijbehorende pipeline die deze Data Flow ook uitvoert
-* Publiceer alle resources, en test de pipeline
+> ### Extra informatie - yyyyMMdd_HHmmss ###  
+> Gebruik de volgende code om de datum en tijd in je bestandsnaam te krijgen:  
+> formatDateTime(utcnow(), 'yyyyMMdd_HHmmss')
+
+**Overige kenmerken**
+De overige kenmerken zijn gegeven in de Power Point Presentatie
+
+## Opdracht 3 - Pipeline aanmaken
+Nu de dataset is aangemaakt, kunnen we de pipeline maken.  
+In hoofdlijnen moet de pipeline het volgende doen:  
+1. Opzoeken welke tabellen er bestaan in de source  
+2. Per tabel:
+   * Alle data van de tabel opzoeken als bron
+   * Een copy maken naar een CSV bestand op de Azure Data Lake Storage
+   * Kenmerken van de opgezochte tabellen doorgeven aan de dataset   
+
+Inspiratie voor de oplossing kan je ook hiervoor vinden in Lab 6 Opdracht 3.
+
+
+## Opdracht 4 - Resultaat bekijken in ADL
+
+* Stel vast dat directories door ADF zijn aangemaakt in Azure Data Lake (ADL)
+* Stel vast welke bestandsnaam de bronnen hebben gekregen
+
+
+
+## Einde Lab 8
 
 ## Inhoudsopgave
 
@@ -50,5 +76,4 @@ Zorg er daarom voor dat de volgende zaken ingericht worden:
 5. [Triggers](../Lab5/LabInstructions5.md)
 6. [Activities](../Lab6/LabInstructions6.md)
 7. [Batching en DIUs](../Lab7/LabInstructions7.md)
-8. [Eerste Data Flows](../Lab8/LabInstructions8.md)
-9. [Data integratie flows](../Lab9/LabInstructions9.md)
+8. [Copy to CSV in Storage Account](../Lab8/LabInstructions8.md)
