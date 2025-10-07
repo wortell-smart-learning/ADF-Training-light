@@ -36,7 +36,7 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
 ## Opdracht 2 - Data klaar zetten
 
 6. In Github binnen deze training zijn twee csv-bestanden beschikbaar. Deze ga je eerst downloaden:
-   * Je kan deze bestanden vinden in de folder: [0Prep/LabEnvironment](../0Prep/LabEnvironment)
+   * Je kan deze bestanden vinden in de folder: [0Prep/LabEnvironment](https://github.com/wortell-smart-learning/ADF-Training-light/tree/main/0Prep/LabEnvironment)
    * Open de CSV bestanden één voor één en click op de download knop.
   
 > De bestanden worden in de default folder opgeslagen.
