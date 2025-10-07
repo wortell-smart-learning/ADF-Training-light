@@ -50,16 +50,16 @@ In deze reeks opdrachten wordt de omgeving ingericht, zet je de data klaar en ri
     * refresh
 7. Klik op **Upload**, klik op **browse for files** en selecteer het bestaand genaamd **ProductCategoryDiscount.csv** of sleep het bestand vanuit explorer naar het drag 'n drop gebied in de portal en klik vervolgens op de **Upload** knop.
 7. Het bestand wordt geupload en zou binnen enkele seconden in de container verschijnen.
-
+7. Voer deze stappen nju ook uit voor **SalesPersonal.csv**
 
 ## Opdracht 3 - Database inrichten
 
-13. Ga terug naar je resourcegroup. In de lijst zie je 2 databases (sqldb-source en sqldb-target) en 1 server. De sqldb-source is al ingericht en voorzien van data (AdventureWorksLT).
-13. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
+14. Ga terug naar je resourcegroup. In de lijst zie je 2 databases (sqldb-source en sqldb-target) en 1 server. De sqldb-source is al ingericht en voorzien van data (AdventureWorksLT).
+14. Klik de **sqldb-target** database aan en vervolgens in de Blade op **Query editor (preview)**.
     * De loginnaam van het sqladmin-account zou al ingevuld staan, voer vervolgens het wachtwoord **WortellSmartLearning.nl** in.
-13. Wanneer je ingelogd bent, zie je een query-interface voor je en de tabbellen, views en stored procedure mappen aan de linkerkant.
-13. Ga terug naar de Github map waarvandaan je in **Opdracht 2** de CSV bestanden hebt gedownload. [0Prep/LabEnvironment](../0Prep/LabEnvironment). Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**. Deze query creëert een aantal tabellen en stored procedures.
-13. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
+14. Wanneer je ingelogd bent, zie je een query-interface voor je en de tabbellen, views en stored procedure mappen aan de linkerkant.
+14. Ga terug naar de Github map waarvandaan je in **Opdracht 2** de CSV bestanden hebt gedownload. [0Prep/LabEnvironment](https://github.com/wortell-smart-learning/ADF-Training-light/tree/main/0Prep/LabEnvironment). Klik vervoglens op het .sql bestand genaamd **Target-Database.sql**. De code zou nu zichtbaar worden, selecteer alle code en plak deze in de Query editor en klik vervolgens op de knop **Run**. Deze query creëert een aantal tabellen en stored procedures.
+14. Wanneer de query is uitgevoerd, is jouw database klaar voor gebruik!
 
 ## Inhoudsopgave
 
